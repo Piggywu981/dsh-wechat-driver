@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "WeChat Driver",
+    "description": "Talk to the local WeChat client from Harness: list chats, send messages and read history through an on-demand driver process. No external console required; every send goes through the session approval gate."
+  }
+}

@@ -1,0 +1,14 @@
+- insert:
+    - id: wechat-driver
+      name: dsh-wechat-driver
+      config:
+        # 驱动进程首次调用工具时才起，空闲 3 分钟回收；这里不用配端口。
+        enabled: true
+        # weixin4（微信 4.x，读本地库 + UIA 发送）| wcferry（微信 3.9 hook）| webhook（HTTP 网关）
+        driver: weixin4
+        # 微信账号目录；留空自动探测。多开时建议显式填，避免发错号。
+        accountDir: ''
+        # 数据库轮询间隔（秒）
+        interval: 1
+        # 解释器：留 python 走 PATH；建议填装了这个包依赖的那个绝对路径
+        pythonPath: python

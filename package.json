@@ -1,0 +1,52 @@
+{
+  "name": "dsh-wechat-driver",
+  "version": "0.1.0",
+  "description": "在 DeepSeek Harness 中直连本机微信：列会话、发消息、拉历史，不依赖外部控制台",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "author": "PiggyWu981",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PiggyWu981/dsh-wechat-driver.git"
+  },
+  "homepage": "https://github.com/PiggyWu981/dsh-wechat-driver#readme",
+  "bugs": {
+    "url": "https://github.com/PiggyWu981/dsh-wechat-driver/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "wechat",
+    "weixin",
+    "weixin4",
+    "wcferry"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "python/",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "LICENSE",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wechat-driver"
+version = "0.1.0"
+description = "独立微信驱动：连微信 / 收发消息 / 列会话，不含 AI 与业务编排"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "PolyForm-Noncommercial-1.0.0" }
+# 核心零依赖：base/protocol/server/factory 只用标准库。
+# 具体驱动走 extras，装不上不影响其它通道（与史山原行为一致）。
+dependencies = []
+
+[project.optional-dependencies]
+weixin4 = [
+    "wechatauto-replica>=1.1.7 ; sys_platform == 'win32'",
+    "uiautomation>=2.0.18 ; sys_platform == 'win32'",
+    "cryptography>=41.0.0",
+    "zstandard>=0.19.0",
+    "pyperclip>=1.8.2",
+    "colorama>=0.4.6",
+]
+wcferry = ["wcferry>=39.3.5"]
+webhook = ["httpx>=0.27"]
+all = [
+    "wechatauto-replica>=1.1.7 ; sys_platform == 'win32'",
+    "uiautomation>=2.0.18 ; sys_platform == 'win32'",
+    "cryptography>=41.0.0",
+    "zstandard>=0.19.0",
+    "pyperclip>=1.8.2",
+    "colorama>=0.4.6",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+wechat-driver = "wechat_driver.server:main"
+
+[tool.setuptools]
+packages = ["wechat_driver"]
