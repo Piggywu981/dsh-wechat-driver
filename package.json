@@ -1,6 +1,6 @@
 {
   "name": "dsh-wechat-driver",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "在 DeepSeek Harness 中直连本机微信：列会话、发消息、拉历史，不依赖外部控制台",
   "license": "PolyForm-Noncommercial-1.0.0",
   "author": "PiggyWu981",
